@@ -1,0 +1,17 @@
+{
+  "name": "cybriahb",
+  "version": "1.0.0",
+  "description": "CybriaHB is a testing site for HyperBeam's API, along with the hopes of using virtual machines & browsers for unblocking purposes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "CybriaTech",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^18.0.6",
+    "axios": "^1.6.8",
+    "express": "^4.19.2"
+  }
+}

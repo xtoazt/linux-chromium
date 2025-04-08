@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>CybriaHB</title>
+  <link href="index.css" rel="stylesheet" type="text/css" />
+  <meta name="description" content="CybriaHB is a testing site for HyperBeam's API, along with the hopes of using virtual machines &amp; browsers for unblocking purposes">
+  <meta name="author" content="CybriaTech">
+  <link rel="icon" href="/logo/cybriahb.png">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body style="margin: 0; padding: 0;">
+    <button id="start" class="start" style="margin-top: 10px;">Start</button>
+<div id="frame" style="height:100vh; width:100vw; margin: 0; padding: 0;"></div>
+  <script type="module">
+    import Hyperbeam from "https://unpkg.com/@hyperbeam/web@latest/dist/index.js";
+
+    const frame = document.getElementById("frame");
+    const startButton = document.querySelector(".start");
+
+    startButton.addEventListener("click", async () => {
+      startButton.style.display = "none";
+      document.body.style.cursor = "none";
+      const resp = await fetch("/computer");
+      startButton.style.display = "none";
+      const data = await resp.json();
+      const hb = await Hyperbeam(frame, data.embed_url);
+      hb.tabs.update({ url: "https://www.google.com" });
+    });
+  </script>
+</body>
+</html>
